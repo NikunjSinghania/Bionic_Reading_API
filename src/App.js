@@ -1,5 +1,5 @@
 import "./styles.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 export default function App() {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(false);
@@ -32,7 +32,9 @@ export default function App() {
     }
   };
 
-  getData();
+ useEffect(()=> {
+   getData()
+ })
 
   return <div className="App">{loading && data}</div>;
 }
